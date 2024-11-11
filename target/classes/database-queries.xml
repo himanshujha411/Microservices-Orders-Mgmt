@@ -1,0 +1,65 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+    <bean class="java.util.HashMap" id="queries">
+        <constructor-arg>
+        <map>
+        
+        <entry key="Select_CartItem_By_CartId_and_productId"
+                       value='select * from cartitem c where cart_id =? and product_id=?'
+                />
+       
+       	<entry key="Select_CartItem_By_CartId"
+                       value='select * from cartitem c where cart_id =? order by product_id'
+                />         
+                
+        <entry key="Update_CartItem"
+                       value='UPDATE cartitem SET price=?, quality=? WHERE cart_item_id=?;'
+                />
+                
+        <entry key="Insert_CartItem"
+                       value='INSERT INTO cartitem (cart_item_id, price, quality, cart_id, product_id, product_name) VALUES(?, ?, 1, ?, ?, ?);'
+                />        
+        
+        <entry key="INSERT_CART"
+                       value='INSERT INTO cart (cart_id, customer_id, total_price) VALUES(?, ?, 0)'
+                />
+                        
+        <entry key="SELECT_CART_BY_CUSTOMERID"
+                       value='select * from cart where customer_id =?'
+                />
+        
+        <entry key="Delete_CartItem"
+                       value='DELETE FROM cartitem WHERE cart_id=? and product_id =?'
+                />    
+       	
+        <entry key="GET_ALL_PRODUCTS"
+                       value='SELECT * FROM item order by product_id'
+                />
+         
+         <entry key="GET_PRODUCT_BY_PRODUCT_ID"
+                       value='select * from item where product_id =?'
+                />
+                
+         <entry key="Update_Cart_For_Total_Price"
+                       value='UPDATE cart SET total_price=? WHERE customer_id=?'
+                />
+                
+         <entry key="Update_Cart_After_Submitting_Order"
+                       value='UPDATE cart SET total_price=0 WHERE customer_id=?'
+                />
+                         
+         <entry key="Delete_CartItem_After_Order_Submit"
+                       value='DELETE FROM cartitem WHERE cart_id=?'
+                /> 
+                      
+         <entry key="Insert_CustomerOrder"
+                       value='INSERT INTO customerorder (customer_order_id, billing_address_id, customer_id, shipping_address_id, cart_id) VALUES(?, ?, ?, ?, ?)'
+                />
+                
+        </map>
+        </constructor-arg>
+    </bean>
+</beans>
