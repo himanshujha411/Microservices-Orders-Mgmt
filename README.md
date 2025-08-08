@@ -36,6 +36,7 @@ Make sure these are installed before running this service:
 
 ## 📁 Folder Structure (Example)
 
+```
 orders-service/
 ├── controller/ # REST controllers (Product, Cart, Order APIs)
 ├── service/ # Business logic
@@ -46,6 +47,7 @@ orders-service/
 ├── util/ # Helper utilities (mappers, constants)
 ├── OrdersApplication.java
 └── application.properties
+```
 
 ---
 
@@ -60,12 +62,15 @@ spring.datasource.url=jdbc:postgresql://localhost:5432/orders_db
 spring.datasource.username=your_db_username
 spring.datasource.password=your_db_password
 spring.jpa.hibernate.ddl-auto=update
+```
 
 ---
 
 ##🚀 Running the Service
 
-1. git clone https://github.com/himanshujha411/Microservices-Orders-Mgmt.git
-2. cd Microservices-Orders-Mgmt
-./mvnw spring-boot:run
+```
+git clone https://github.com/himanshujha411/Microservices-Orders-Mgmt.git
+cd Microservices-Orders-Mgmt
 
+./mvnw spring-boot:run
+```
