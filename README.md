@@ -66,7 +66,7 @@ spring.jpa.hibernate.ddl-auto=update
 
 ---
 
-##🚀 Running the Service
+## 🚀 Running the Service
 
 ```
 git clone https://github.com/himanshujha411/Microservices-Orders-Mgmt.git
